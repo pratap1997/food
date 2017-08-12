@@ -1,0 +1,29 @@
+<form class="form-horizontal">
+
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Parent Area</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="area.parent_area" placeholder="Parent Area">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Child Area</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="area.child_area" placeholder="Child Area">
+    </div>
+  </div>
+
+  <div class="col-sm-offset-2 col-sm-10">
+  <button type="submit" class="btn btn-default" ng-click="add(area)">Add Area</button>
+  </div>
+
+</form>
+
+<button ng-click="viewable=!viewable">SHOW AREA SWITCH</button>
+<div ng-show="viewable">
+    <ul>
+        <li ng-repeat="area in areas">{{area.parent_area}}--{{area.child_area}}---<span ng-click="delete(area._id)">Delete</span></li>
+    </ul>
+</div>

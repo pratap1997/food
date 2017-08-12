@@ -1,0 +1,58 @@
+﻿I am in shop component<br/><br/>
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Shop Name</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="shop_name" placeholder="Shop Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Shop Desc</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="shop_desc" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Shop Address</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="shop_address" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Shop Number</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="shop_number" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Shop Numbers</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="shop_numbers" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">0=Veg, 1=Non Veg, 2=Both</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="shop_nonveg" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Select Area</label>
+    <div class="col-sm-10">
+    <select class="form-control" ng-model="selectedArea" ng-options="o.child_area+'-'+o.parent_area for o in allarea"></select>
+    </div>
+  </div>
+  <div class="col-sm-offset-2 col-sm-10">
+  <button type="submit" class="btn btn-default" ng-click="add(shop_name,shop_desc,shop_address,shop_number,shop_numbers,shop_nonveg,selectedArea._id)">Add Shop</button>
+  <!-- <button type="submit" class="btn btn-primary" ng-disabled="formUpdate" ng-click="update(shop)">Update</button> -->
+  </div>
+</form>
+
+
+<h3>All Shops data</h3>
+<div>
+    <ul>
+        <li ng-repeat="shop in shops"><b>{{shop.shop_name}}</b>({{shop.shop_address}})-------<span ng-click="delete(shop._id)">Delete</span></li>
+    </ul>
+</div>
